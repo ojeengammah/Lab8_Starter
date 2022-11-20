@@ -66,6 +66,7 @@ describe('Basic user flow for Website', () => {
     // Once you have the innerText property, use innerText['_remoteObject'].value to get the text value of it
     let value = await inText.jsonValue();
     expect(value).toBe('Remove from Cart');
+    await button.click();
   }, 2500);
 
   // Check to make sure that after clicking "Add to Cart" on every <product-item> that the Cart
@@ -101,11 +102,10 @@ describe('Basic user flow for Website', () => {
       for (let i=0; i<productItems.length; i++ ){
       let shadowRoot = await productItems[i].getProperty('shadowRoot');
       let button = await shadowRoot.$('button');
-      await button.click();
       let cartCount = await page.$('#cart-count');
       let inText = await cartCount.getProperty('innerText');
       let value = await inText.jsonValue();
-      inText = await cartCount.getProperty('innerText');
+      inText = await button.getProperty('innerText');
       let value2 = await inText.jsonValue();
       boolValue = false; 
       if (value == 20 && value2 == "Remove from Cart"){
