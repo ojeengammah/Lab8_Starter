@@ -7,7 +7,7 @@
 
 #### 1) Where would you fit your automated tests in your Recipe project development pipeline? Select one of the following and explain why.
 
-<b>I would like with option 1 "Within a Github action that runs whenever code is pushed" because it allows to automate our testing and add less complexity to the code and every developer has access to it.</b>
+<b>I would go with option 1 "Within a Github action that runs whenever code is pushed" because it allows to automate our testing and add less complexity to the code and every developer has access to it.</b>
 
 #### 2) Would you use an end to end test to check if a function is returning the correct output? (yes/no)
 
